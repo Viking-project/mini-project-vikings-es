@@ -48,28 +48,46 @@ class Saxon(Soldier):
         else:
             return f"A Saxon has died in combat"  
 
-"""# Davicente
+# Davicente
 
 class War():
     def __init__(self):
-        # your code here
-
-    def addViking(self, viking):
-        # your code here
+        self.vikingArmy = []
+        self.saxonArmy = []
     
+    def addViking(self, viking):
+        self.vikingArmy.append(viking)
+
     def addSaxon(self, saxon):
-        # your code here
+        self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
-        # your code here
+        saxon = random.choice(self.saxonArmy)
+        viking = random.choice(self.vikingArmy)
+        message = saxon.receiveDamage(viking.attack())
+        if saxon.health <= 0:
+            self.saxonArmy.remove(saxon)
+        return message
     
     def saxonAttack(self):
-        # your code here
+        saxon = random.choice(self.saxonArmy)
+        viking = random.choice(self.vikingArmy)
+        fuerzaDeAtaque=saxon.attack()
+        message = viking.receiveDamage(fuerzaDeAtaque)
+        if viking.health <= 0:
+            self.vikingArmy.remove(viking)
+        return message
 
     def showStatus(self):
-        # your code here
-    pass
+        if  len(self.saxonArmy) == 0:
+            return "Vikings have won the war of the century!"
+        elif not self.vikingArmy:
+            return "Saxons have fought for their lives and survive another day..."
+        else:
+            return "Vikings and Saxons are still in the thick of battle."
 
+"""
+pass 
 #yop
 class War2:
 
@@ -92,4 +110,4 @@ class War2:
         # your code here
 
     pass
- """
+"""
