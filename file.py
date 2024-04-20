@@ -14,7 +14,7 @@ def create_saxon():
     return Saxon(health, strength)
 
 def create_teams(num_vikings, num_saxons):
-    war = War
+    war = War()
     for _ in range(num_vikings):
         war.addViking(create_vikings())
     
@@ -26,7 +26,7 @@ def create_teams(num_vikings, num_saxons):
 
 def play_game():
     war = create_teams(10, 10)
-    while war.showStatus != "Vikings and Saxons are still in the thick of battle.":
+    while war.showStatus != "Vikings and Saxons are still in the thick of battle." and len(war.saxonArmy) > 0 and len(war.vikingArmy) > 0:
         if random.choice([True, False]):
             result = war.vikingAttack()
         else:
