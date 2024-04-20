@@ -62,6 +62,8 @@ class War():
         self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
+        if not self.vikingArmy:
+            return "No vikings lefts"
         saxon = random.choice(self.saxonArmy)
         viking = random.choice(self.vikingArmy)
         message = saxon.receiveDamage(viking.attack())
@@ -70,6 +72,8 @@ class War():
         return message
     
     def saxonAttack(self):
+        if not self.saxonArmy:
+            return "No saxons lefts"
         saxon = random.choice(self.saxonArmy)
         viking = random.choice(self.vikingArmy)
         fuerzaDeAtaque=saxon.attack()
