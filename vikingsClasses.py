@@ -35,16 +35,20 @@ class Viking(Soldier):
     
     
 
-""" # Saxon
+# Saxon
 
 class Saxon(Soldier):
     def __init__(self, health, strength):
-        # your code here
+       super().__init__(health, strength)  
 
     def receiveDamage(self, damage):
-        # your code here
+        self.health -= damage
+        if self.health > 0:
+            return f"A Saxon has received {damage} points of damage"
+        else:
+            return f"A Saxon has died in combat"  
 
-# Davicente
+"""# Davicente
 
 class War():
     def __init__(self):
