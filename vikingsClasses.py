@@ -26,7 +26,7 @@ class Viking(Soldier):
         return "Odin Owns You All!"        
 
     def receiveDamage(self, damage):
-        self.health -= damage 
+        self.health -= damage   #super().receiveDamage(damage)
         if self.health > 0:
             return f"{self.name} has received {damage} points of damage"
         else:
@@ -42,7 +42,7 @@ class Saxon(Soldier):
        super().__init__(health, strength)  
 
     def receiveDamage(self, damage):
-        self.health -= damage
+        self.health -= damage   #super().receiveDamage(damage)
         if self.health > 0:
             return f"A Saxon has received {damage} points of damage"
         else:
